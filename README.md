@@ -1,10 +1,10 @@
 # employeeTrackerSQL
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+A command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.
 
 # Table of Contents 
 
 [User Story](#User-Story)
-
 
 [Usage](#Usage)
 

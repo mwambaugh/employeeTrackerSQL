@@ -1,16 +1,16 @@
-INSERT INTO employees (employee_name)
-VALUES ("Lion King"),
-       ("The Godfather"),
-       ("West Side Story"),
-       ("Parasite"),
-       ("The Wizard of Oz");
+INSERT INTO departments (department_name)
+VALUES ("Engineering"),
+       ("Finance"),
+       ("Legal"),
+       ("Sales"),
 
-INSERT INTO reviews (employee_id, review)
-VALUES (1, "Zazu is underrated. Give that hornbill a sequel!"),
-       (2, "I'm gonna make him an offer you can't refuse, watch this employee"),
-       (1, "Scar is the lion everyone loves to hate"),
-       (3, "Ten years of ballet and three years of tap to join a gang in this neighborhood"),
-       (5, "The tin man gave a metallic, hollow performance"),
-       (1, "Hakuna matata"),
-       (5, "Those flying monkeys are nightmare fuel!");
+INSERT INTO roles (department_name, roles, salary)
+VALUES (Sales, "Sales Lead", 100000),
+       (Sales, "Salseperson", 80000),
+       (Engineering, "Lead Engineer", 150000),
+         (Engineering, "Software Engineer", 120000),
+           (Finance, "Account Manager", 160000),
+             (Legal, "Legal Team Lead", 250000),
+               (Legal, "Lawyer", 190000),
+
        

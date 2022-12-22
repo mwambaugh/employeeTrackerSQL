@@ -3,9 +3,9 @@ CREATE DATABASE employees_db;
 
 USE employees_db;
 
-CREATE TABLE employees (
+CREATE TABLE departments (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  employee_name VARCHAR(100) NOT NULL
+ department_name VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE reviews (

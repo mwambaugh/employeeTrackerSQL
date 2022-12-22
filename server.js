@@ -2,8 +2,50 @@ const express = require('express');
 // Import and require mysql2
 const mysql = require('mysql2');
 
+const inquirer = require('inquirer');
+const fs = require('fs');
+
+const departmentHandle = require("./handlers/department");
+const roleHandle = require("./handlers/roles");
+const employeeHandle = require("./handlers/employee");
+const allHandle = require("./handlers/all";)
+
+
+
 const PORT = process.env.PORT || 3001;
 const app = express();
+
+//will need a way to handle choices 
+
+startArray = ['View All Employees', 'Add Employee', 'Update Employee Role', 'View All Roles', 'Add Role', 'Add Role', 'View All Departments', 'Add Departments', 'Quit'];
+
+inquirer
+  .prompt([
+    { 
+    type: 'checkbox',
+    name: 'start',
+    message: 'What would you like to do?',
+    choices: startArray},
+
+     {/* Pass your questions in here */},
+
+      {/* Pass your questions in here */},
+
+       {/* Pass your questions in here */},
+
+        {/* Pass your questions in here */},
+  ])
+  .then((answers) => {
+    // Use user feedback
+  })
+  .catch((error) => {
+    if (error.isTtyError) {
+      // Prompt couldn't be rendered in the current environment
+    } else {
+      // Something else went wrong
+    }
+  });
+
 
 // Express middleware
 app.use(express.urlencoded({ extended: false }));

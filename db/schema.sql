@@ -5,7 +5,7 @@ USE employees_db;
 
 CREATE TABLE department (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
- dpt_name VARCHAR(100) NOT NULL
+ name VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE role (
@@ -31,7 +31,3 @@ CREATE TABLE employee (
   REFERENCES employee (id) 
   ON DELETE SET NULL 
 );
-
-
-
-

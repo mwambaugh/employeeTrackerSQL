@@ -65,3 +65,13 @@ const viewDepartments = () => {
   )
 }
 
+
+const addEmployee = () => {
+  const sqlQuery = 'SELECT dpt_name AS employee FROM employee';
+  db.query(sqlQuery,(err, results) => {
+    if (err) throw err
+    console.table(results,['employee'])
+    db.end();
+   }
+  )
+}

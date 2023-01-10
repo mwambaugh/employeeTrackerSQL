@@ -56,22 +56,12 @@ inquirer
   });
 
 const viewDepartments = () => {
-  const sqlQuery = 'SELECT dpt_name AS department FROM department';
-  db.query(sqlQuery,(err, results) => {
+  const sqlQuery = 'SELECT name AS department FROM department';
+  db.query(sqlQuery
+    ,(err, results) => {
     if (err) throw err
-    console.table(results,['department'])
-    db.end();
-   }
-  )
-}
+    console.table(results)
+    
 
-
-const addEmployee = () => {
-  const sqlQuery = 'INSERT INTO employee';
-  db.query(sqlQuery,(err, results) => {
-    if (err) throw err
-    console.table(results,['employee'])
-    db.end();
-   }
-  )
+  })
 }

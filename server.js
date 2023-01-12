@@ -8,13 +8,14 @@ const db = mysql.createConnection(
     // MySQL username,
     user: 'root',
     // TODO: Add MySQL password here
-    password: '',
-    database: 'employee_db'
+    password: 'root',
+    database: 'employees_db'
   },
   console.log(`Connected to the employee_db database.`)
 );
 
-startArray = ['View All Employees', 'Add Employee', 'Update Employee Role', 'View All Roles', 'Add Role', 'Add Role', 'View All Department', 'Add Department', 'Remove Department', 'Quit'];
+function mainMenu() {
+  startArray = ['View All Employees', 'Add Employee', 'Update Employee Role', 'View All Roles', 'Add Role', 'Add Role', 'View All Department', 'Add Department', 'Remove Department', 'Quit'];
 
 inquirer
   .prompt([
@@ -54,14 +55,43 @@ inquirer
         return process.exit();
     }
   });
+}
 
+mainMenu();
+const addEmployee = () => {
+  const sqlQuery = 'INSERT name AS employee FROM employees';
+  db.query(sqlQuery
+    ,(err, results) => {
+    if (err) throw err
+    console.table(results)
+mainMenu();
+  })
+}
+
+
+mainMenu();
 const viewDepartments = () => {
   const sqlQuery = 'SELECT name AS department FROM department';
   db.query(sqlQuery
     ,(err, results) => {
     if (err) throw err
     console.table(results)
+mainMenu();
     
 
   })
 }
+
+mainMenu();
+const addDepartments = () => {
+  const sqlQuery = 'SELECT name AS department FROM department';
+  db.query(sqlQuery
+    ,(err, results) => {
+    if (err) throw err
+    console.table(results)
+mainMenu();
+    
+
+  })
+}
+

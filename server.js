@@ -58,18 +58,7 @@ inquirer
 }
 
 mainMenu();
-const addEmployee = () => {
-  const sqlQuery = 'INSERT name AS employee FROM employees';
-  db.query(sqlQuery
-    ,(err, results) => {
-    if (err) throw err
-    console.table(results)
-mainMenu();
-  })
-}
 
-
-mainMenu();
 const viewDepartments = () => {
   const sqlQuery = 'SELECT name AS department FROM department';
   db.query(sqlQuery
@@ -77,12 +66,100 @@ const viewDepartments = () => {
     if (err) throw err
     console.table(results)
 mainMenu();
-    
+  });
+};
 
-  })
-}
-
+const addEmployee = () => {
+  const sqlQuery = 'SELECT name AS department FROM department';
+  db.query(sqlQuery
+    ,(err, results) => {
+    if (err) throw err
+    console.table(results)
 mainMenu();
+  });
+};
+
+inquirer.prompt([
+  {
+    type: 'input',
+    name: 'first_name',
+    message: 'What is the employee\'s first name?'
+  },
+  {
+    type: 'input',
+    name: 'last_name',
+    message: 'What is the employee\'s last name?'
+
+  },
+  {
+    type: 'input',
+    name: 'role_id',
+    message: 'What is the employee\'s role id?'
+
+  },
+  {
+    type: 'input',
+    name: 'manager_id',
+    message: 'What is the employee\'s manager id?'
+
+  }
+])
+  .then((answers) => {
+    const sqlQuery =
+      "INSERT INTO employee SET ?";
+    db.query(sqlQuery, answers, (err, results) => {
+      if (err) throw err;
+      console.table(results);
+      mainMenu();
+    });
+  });
+
+
+
+
+
+
+  const viewEmployee = () => {
+    const sqlQuery = 'SELECT name AS department FROM department';
+    db.query(sqlQuery
+      ,(err, results) => {
+      if (err) throw err
+      console.table(results)
+  mainMenu();
+    });
+  };
+
+
+const updateEmployeeRole = () => {
+  const sqlQuery = 'SELECT name AS department FROM department';
+  db.query(sqlQuery
+    ,(err, results) => {
+    if (err) throw err
+    console.table(results)
+mainMenu();
+  });
+};
+
+const viewRoles = () => {
+  const sqlQuery = 'SELECT name AS department FROM department';
+  db.query(sqlQuery
+    ,(err, results) => {
+    if (err) throw err
+    console.table(results)
+mainMenu();
+  });
+};
+
+const addRole = () => {
+  const sqlQuery = 'SELECT name AS department FROM department';
+  db.query(sqlQuery
+    ,(err, results) => {
+    if (err) throw err
+    console.table(results)
+mainMenu();
+  });
+};
+
 const addDepartments = () => {
   const sqlQuery = 'SELECT name AS department FROM department';
   db.query(sqlQuery
@@ -90,8 +167,51 @@ const addDepartments = () => {
     if (err) throw err
     console.table(results)
 mainMenu();
-    
+  });
+};
 
-  })
-}
+const removeDepartment = () => {
+  const sqlQuery = 'SELECT name AS department FROM department';
+  db.query(sqlQuery
+    ,(err, results) => {
+    if (err) throw err
+    console.table(results)
+mainMenu();
+  });
+};
+
+inquirer.prompt([
+  {
+    type: 'input',
+    name: 'first_name',
+    message: 'What is the employee\'s first name?'
+  },
+  {
+    type: 'input',
+    name: 'last_name',
+    message: 'What is the employee\'s last name?'
+
+  },
+  {
+    type: 'input',
+    name: 'role_id',
+    message: 'What is the employee\'s role id?'
+
+  },
+  {
+    type: 'input',
+    name: 'manager_id',
+    message: 'What is the employee\'s manager id?'
+
+  }
+])
+  .then((answers) => {
+    const sqlQuery =
+      "INSERT INTO employee SET ?";
+    db.query(sqlQuery, answers, (err, results) => {
+      if (err) throw err;
+      console.table(results);
+      mainMenu();
+    });
+  });
 
